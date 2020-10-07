@@ -1,0 +1,370 @@
+/**
+ * styles.scss
+ * ---
+ * Main `sass` file. Import here `sass` files
+ */
+
+/**
+ * Variables
+ */
+$font-size-base: 140%;
+$line-height-base: 1.5;
+
+$body-bg: #f4f4f7;
+$blue: #213f8f;
+$dark: #000000;
+$light: #ffffff;
+$grey: #eeeeee;
+$darkgrey: #999999;
+$box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.16);
+// Modules
+@import "modules/mixins";
+@import "modules/fonts";
+
+// Partials
+@import "partials/reset";
+@import "partials/utils";
+@import "partials/print";
+@import "partials/mediaqueries";
+@import "partials/animation";
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(-150px) scale(0.5);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+// Widget
+.sidebar {
+  h1.title {
+    margin-bottom: 0;
+  }
+  h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: "PoppinsSemiBold", sans-serif;
+    color: $blue;
+    margin: 20px 0;
+  }
+  .sidebar-widget {
+    > div {
+      margin-bottom: 50px;
+    }
+  }
+  .fr_widget {
+    padding: 5px 25px;
+    background: $light;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
+  }
+  form {
+    font-family: "PoppinsRegular", sans-serif;
+    flex-direction: column;
+    #amount {
+      margin: 0 0 20px 0;
+      position: relative;
+      box-shadow: $box-shadow;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
+      z-index: 200;
+      border: 2px solid transparent;
+      font-size: 30px;
+      font-family: "PoppinsSemiBold", sans-serif;
+      color: $dark;
+      text-align: center;
+      @include transition(all 0.2s ease);
+      &:hover {
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
+        border: 2px solid $blue;
+      }
+    }
+
+    .currencies {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      @include screen(med-small) {
+        flex-direction: row;
+      }
+
+      @include screen(x-small) {
+        flex-direction: column;
+      }
+      .selectbox {
+        margin: 0;
+        position: relative;
+        flex-grow: 1;
+        width: 100%;
+
+        .select {
+          background: $light;
+          width: 100%;
+          box-shadow: $box-shadow;
+          border-radius: 10px;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 0px;
+          padding: 0;
+          position: relative;
+          z-index: 200;
+          border: 2px solid transparent;
+          @include transition(all 0.2s ease);
+          @include screen(small) {
+            padding: 10px 0;
+          }
+          @include screen(x-small) {
+            padding: 0;
+          }
+          &.active {
+            padding-left: 0;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
+            border: 2px solid $blue;
+            .content-option {
+              &:before {
+                content: "";
+                display: block;
+                height: 0;
+                width: 0;
+                border-top: 15px solid $blue;
+                border-right: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+                border-left: 15px solid transparent;
+                position: absolute;
+                bottom: -30px;
+                left: calc(50% - 15px);
+              }
+            }
+          }
+          &:hover {
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
+            border: 2px solid $blue;
+          }
+          i {
+            font-size: 30px;
+            margin-left: 20px;
+            margin-right: 20px;
+            color: $blue;
+          }
+          .content-option {
+            &:hover {
+              background: none;
+              .title {
+                color: $dark;
+              }
+              .description {
+                color: $dark;
+              }
+            }
+          }
+        }
+      }
+
+      .options {
+        background: $light;
+        border-radius: 10px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.16);
+        max-height: 400px;
+        overflow: auto;
+        width: 100%;
+        display: none;
+        position: absolute;
+        z-index: 202;
+        margin-top: 30px;
+        &.active {
+          display: block;
+          @include animation("fadeIn 0.3s forwards");
+        }
+      }
+
+      .switch {
+        margin: 15px 10px;
+        position: relative;
+        min-width: 40px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        color: #cccccc;
+        @include transition(all 0.3s ease);
+        flex-shrink: 1;
+        &:hover {
+          color: #434343;
+          cursor: pointer;
+        }
+      }
+
+      .content-option {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        @include transition(all 0.2s ease);
+        padding: 10px 20px;
+        .title {
+          color: #000;
+          font-family: "PoppinsSemiBold", sans-serif;
+          font-size: 30px;
+          line-height: 26px;
+          @include screen(small) {
+            font-size: 26px;
+            line-height: 22px;
+          }
+        }
+        .description {
+          font-size: 14px;
+          color: #434343;
+          margin: 0;
+          @include screen(small) {
+            display: none;
+          }
+          @include screen(x-small) {
+            display: block;
+          }
+        }
+        img {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+        }
+        &:hover {
+          background: $blue;
+          .title {
+            color: $light;
+          }
+          .description {
+            color: $light;
+          }
+        }
+      }
+    }
+  }
+}
+
+.result {
+  margin: 30px 0;
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $grey;
+  opacity: 0;
+  font-family: "PoppinsRegular", sans-serif;
+  > div {
+    margin: 0 5px;
+    display: inline-block;
+    &:nth-child(3) {
+      display: none;
+      margin: 20px 0 10px 0;
+    }
+  }
+  #valueTo {
+    font-family: "PoppinsSemiBold", sans-serif;
+    font-size: 80px;
+    line-height: 90px;
+    word-break: break-word;
+    @include screen(small) {
+      font-size: 60px;
+      line-height: 70px;
+    }
+  }
+}
+
+.rates {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  font-family: "PoppinsSemiBold", sans-serif;
+  margin-bottom: 5px;
+  opacity: 0;
+  > div {
+    display: flex;
+    margin: 0 5px;
+    .currencyTo {
+      font-size: 16px;
+    }
+  }
+}
+
+/* Widgets */
+.widget-text {
+  .base {
+    text-align: center;
+    h2 {
+      font-family: "PoppinsSemiBold", sans-serif;
+      font-size: 26px;
+      margin: 20px 0;
+    }
+    img {
+      max-width: 120px;
+    }
+  }
+  .rates-list {
+    text-align: center;
+    > div {
+      margin: 0 0 11px 0;
+    }
+    .text {
+      h4 {
+        font-size: 20px;
+        font-family: "PoppinsSemiBold", sans-serif;
+      }
+    }
+  }
+}
+
+.current_rates {
+  width: 100%;
+  padding-top: 40px;
+  margin-top: 50px;
+  border-top: 1px solid $grey;
+  h3 {
+    text-transform: uppercase;
+    color: $darkgrey;
+  }
+  .flex {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    h2,
+    h3,
+    h4,
+    p {
+      margin: 0;
+      line-height: 1em;
+    }
+    h4 {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    > div {
+      display: flex;
+      height: 40px;
+      align-self: baseline;
+      .text {
+        .value {
+          line-height: 1.75em;
+        }
+      }
+    }
+  }
+}
+
+@include keyframes(fade-in) {
+  0% {
+    transform: translateY(-150px) scale(0.5);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}

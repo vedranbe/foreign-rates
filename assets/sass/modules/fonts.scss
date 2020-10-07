@@ -1,0 +1,22 @@
+/**
+ * Font-faces
+*/
+
+@mixin font-face($name, $filename, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $name;
+    src: url("../fonts/#{$filename}.ttf") format("truetype");
+    font-style: $style;
+    font-weight: $weight;
+  }
+}
+
+/* Poppins */
+@include font-face("PoppinsRegular", "Poppins/Poppins-Regular", normal, normal);
+
+@include font-face("PoppinsSemiBold", "Poppins/Poppins-SemiBold", normal, 600);
+
+/* Raleway */
+@include font-face("RalewayRegular", "Raleway/Raleway-Regular", normal, normal);
+
+@include font-face("RalewayBold", "Raleway/Raleway-SemiBold", normal, 600);

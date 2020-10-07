@@ -1,0 +1,74 @@
+/**
+ * modules/mixins
+*/
+
+// ==============================
+// Font face
+// ==============================
+
+@mixin font-face($name, $filename, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $name;
+    src: url("../fonts/#{$filename}.ttf") format("truetype");
+    font-style: $style;
+    font-weight: $weight;
+  }
+}
+
+// ==============================
+// Reset margins and paddings
+// ==============================
+@mixin reset-box {
+  padding: 0;
+  margin: 0;
+}
+
+// ==============================
+// Padding mixin
+// ==============================
+@mixin padding($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+
+// ==============================
+// Margin mixin
+// ==============================
+@mixin margin($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+
+// ==============================
+// Unlisting
+// ==============================
+@mixin unlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// ==============================
+// Transitions
+// ==============================
+@mixin transition($args) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// ==============================
+// Auto prefixer
+// ==============================
+@mixin crossBrowser($property, $css) {
+  -webkit-#{$property}: $css;
+  -moz-#{$property}: $css;
+  -o-#{$property}: $css;
+  #{$property}: $css;
+}
