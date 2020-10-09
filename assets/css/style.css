@@ -603,8 +603,15 @@ body,
 }
 
 .current_rates h3 {
+  margin: 0;
+  font-size: 18px;
   text-transform: uppercase;
   color: #999999;
+}
+
+.current_rates h2 {
+  margin: 0;
+  font-size: 22px;
 }
 
 .current_rates .flex {
