@@ -195,7 +195,7 @@ class ForeignRatesSettings {
 
 			global $wpdb;
 
-			$sql = $wpdb->get_results("SELECT `option_value` FROM `er_options` WHERE `option_name`='foreign_rates_settings_option_name'");
+			$sql = $wpdb->get_results("SELECT `option_value` FROM {$wpdb->prefix}options WHERE `option_name`='foreign_rates_settings_option_name'");
 			$data = unserialize($sql[0]->option_value);
 
 			$display_in = $data['display_in'];
