@@ -189,8 +189,25 @@ input[type="number"] {
   }
 }
 
-.sidebar h1.title {
-  margin-bottom: 0;
+body,
+.footer-nav-widgets-wrapper,
+#site-footer {
+  background: #f1f1f1 !important;
+}
+
+.sidebar a {
+  text-decoration: none !important;
+}
+
+.sidebar h1,
+.sidebar h2,
+.sidebar h3,
+.sidebar h4,
+.sidebar h5,
+.sidebar h6 {
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0;
 }
 
 .sidebar h3 {
@@ -374,6 +391,7 @@ input[type="number"] {
 
 .sidebar form .currencies .selectbox .select .content-option:hover .description {
   color: #000000;
+  font-family: "RalewayRegular", sans-serif;
 }
 
 .sidebar form .currencies .options {
@@ -452,6 +470,7 @@ input[type="number"] {
   font-size: 14px;
   color: #434343;
   margin: 0;
+  font-family: "RalewayRegular", sans-serif;
 }
 
 @media screen and (max-width: 767px) {
@@ -482,6 +501,7 @@ input[type="number"] {
 
 .sidebar form .currencies .content-option:hover .description {
   color: #ffffff;
+  font-family: "RalewayRegular", sans-serif;
 }
 
 .result {
