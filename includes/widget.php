@@ -132,6 +132,14 @@ class Foreign_Rates extends WP_Widget {
 
 		// Display the widget
 		
+		
+		$url = 'https://api.exchangeratesapi.io/latest?base='.$base.'&symbols='.$symbols;
+		$arguments = array(
+			'method' => 'GET'
+		);
+
+    	$response = wp_remote_get ( $url, $arguments );  
+		$json_a = json_decode($response['body'], true);
 
 			if ( $title ) {
 				echo $before_title . $title . $after_title;
@@ -140,9 +148,7 @@ class Foreign_Rates extends WP_Widget {
 			echo '<div class="sidebar widget-text wp_widget_plugin_box fr_widget"><br>'; 
 			echo '<div class="row">';
 			if ( $base ) {
-
-				$string = file_get_contents(ER_PLUGIN_DIR .'/json/data.json', true);
-				$json_a = json_decode($string, true);
+				
 	
 				if(!$json_a['rates'][$base]) { $rate = 1; } else {   $rate = $json_a['rates'][$base];  }
 	
