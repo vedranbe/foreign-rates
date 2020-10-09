@@ -24,7 +24,7 @@ Widget has its own options for currencies. Since the base rate in API is always 
 Options are defined in the 'Foreign Rates Settings' page. It has 'Base currency', 'Convert to', 'Display in' and 'Enabled' options. Ratios are calculated the same way as in Widget.
 It will show at the bottom of posts if all options are set and the post is older than one week, post category set to 'Currency' and tag set to 'EUR'.
 Links to posts on 'Homepage'.
-<?php fr_show_in_post(get_the_ID()); ?> should be added to single.php in your theme folder.
+```<?php fr_show_in_post(get_the_ID()); ?>``` should be added to single.php in your theme folder.
 
 ### Version
 1.0 alpha
