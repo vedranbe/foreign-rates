@@ -37,10 +37,25 @@ $box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.16);
   }
 }
 
+body,
+.footer-nav-widgets-wrapper,
+#site-footer {
+  background: #f1f1f1 !important;
+}
 // Widget
 .sidebar {
-  h1.title {
-    margin-bottom: 0;
+  a {
+    text-decoration: none !important;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding: 0;
+    margin: 0;
+    letter-spacing: 0;
   }
   h3 {
     font-size: 20px;
@@ -163,6 +178,7 @@ $box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.16);
               }
               .description {
                 color: $dark;
+                font-family: "RalewayRegular", sans-serif;
               }
             }
           }
@@ -222,6 +238,7 @@ $box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.16);
           font-size: 14px;
           color: #434343;
           margin: 0;
+          font-family: "RalewayRegular", sans-serif;
           @include screen(small) {
             display: none;
           }
@@ -241,6 +258,7 @@ $box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.16);
           }
           .description {
             color: $light;
+            font-family: "RalewayRegular", sans-serif;
           }
         }
       }
