@@ -3,7 +3,7 @@
 function fr_show_in_post($id) {
     global $wpdb, $post;
 
-	$sql = $wpdb->get_results("SELECT `option_value` FROM `er_options` WHERE `option_name`='foreign_rates_settings_option_name'");
+	$sql = $wpdb->get_results("SELECT `option_value` FROM {$wpdb->prefix}options WHERE `option_name`='foreign_rates_settings_option_name'");
     $data = unserialize($sql[0]->option_value);
 
     $base = strtoupper($data['base']);
