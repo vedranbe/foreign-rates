@@ -344,8 +344,14 @@ body,
   margin-top: 50px;
   border-top: 1px solid $grey;
   h3 {
+    margin: 0;
+    font-size: 18px;
     text-transform: uppercase;
     color: $darkgrey;
+  }
+  h2 {
+    margin: 0;
+    font-size: 22px;
   }
   .flex {
     display: flex;
