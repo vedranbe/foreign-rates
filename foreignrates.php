@@ -35,8 +35,13 @@ include(ER_PLUGIN_INCLUDES_DIR.'/widget.php'); // Widget
  */
 function foreign_rates_styles()
 {
+    if(!is_admin()){
+      wp_register_style('bootstrap', plugin_dir_url( __FILE__ ).'assets/css/bootstrap.min.css', array(), '4.0', 'all');
+      array_unshift(wp_styles()->queue, 'bootstrap');
+    }
     wp_register_style('fr-style', plugin_dir_url( __FILE__ ).'assets/css/style.min.css', array(), '1.0', 'all');
     wp_enqueue_style('fr-style'); 
+    
 }
  
 function foreign_rates_scripts()
