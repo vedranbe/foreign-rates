@@ -131,12 +131,13 @@ class Foreign_Rates extends WP_Widget {
 		echo $before_widget;
 
 		// Display the widget
-		echo '<div class="sidebar">';
-		echo '<div class="sidebar widget-text wp_widget_plugin_box fr_widget">'; 
+		
 
 			if ( $title ) {
 				echo $before_title . $title . $after_title;
 			}
+			echo '<div class="sidebar">';
+			echo '<div class="sidebar widget-text wp_widget_plugin_box fr_widget"><br>'; 
 			echo '<div class="row">';
 			if ( $base ) {
 
