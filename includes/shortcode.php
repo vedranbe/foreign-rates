@@ -23,8 +23,10 @@ function fr_select_function( $atts = array(), $content = null ) {
     $currency = "Canadian Dollar";
     break;
     default:
-}    
-return '<form action="">
+}
+return '
+<div class="sidebar">
+<form action="">
   <input
     name="amount"
     id="amount"
