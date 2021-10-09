@@ -13,7 +13,7 @@
 
     if(!$base) { $base = 'EUR'; }
     
-    $url = 'https://api.exchangeratesapi.io/latest?base='.$base.'&symbols='.$symbols;
+    $url = 'http://api.exchangeratesapi.io/latest?base='.$base.'&symbols='.$symbols;
     $arguments = array(
         'method' => 'GET'
     );
