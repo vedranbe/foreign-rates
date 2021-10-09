@@ -35,6 +35,3 @@ There is a possibility of some bugs which will be fixed.
 
 ### Working example
 http://vedran.co.za.dedi642.your-server.de/foreignrates/
-
-#### Standalone converter
-http://vedran.co.za.dedi642.your-server.de/selectbox/
