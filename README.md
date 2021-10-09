@@ -14,7 +14,7 @@ It contains 3 main components:
 #### 1. Shortcode
 
 It's intended to be in the sidebar using the following sample code [foreign_rates base="EUR" currencies="CAD,CHF,GBP,USD"].
-Data is loaded directly from https://api.exchangeratesapi.io/latest. Other components use local file. It uses Jquery for calculations. 
+Data is loaded directly from http://api.exchangeratesapi.io/latest. Other components use local file. It uses Jquery for calculations. 
 Option for switching currencies and inline switch for currency names (not data in API) are included.
 
 #### 2. Widget
